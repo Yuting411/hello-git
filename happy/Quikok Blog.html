@@ -20,7 +20,29 @@
         </div>
 
 
-       
+        <!--以下是每一個文章介紹的小blog-->
+        <div class="row">
+        {% for each_aticle in articles_in_list %}
+            <div class="big-card col-md-10">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="file:///C:/Users/User/%7B%7B%20each_aticle.main_picture.url%20%7D%7D" class="card-img" style="width: 300px; height: 200;">
+                    </div>
+                    <div class="textcard col-md-8">
+                        <div class="timename" style="line-height: 1.5">
+                            <span class="time">{{ each_aticle.date }}</span>
+                            <span class="name">{{ each_aticle.author.name }}</span>
+                        </div>
+                        <span class="category">{{ each_aticle.category }}</span>
+                        <p class="card-title"> {{ each_aticle.title }} </p>
+                        {{ each_aticle.snippet }}
+                        <button>More</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!--以上是每一個文章介紹的小blog-->
+
 
             <div class="article-list col-md-2">
                 <div class="article-title">
